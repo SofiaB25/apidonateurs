@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Historique des Donateurs</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside id="sidebar">
+    <h2>Filtres et Tri</h2>
+    <button onclick="filterByGender('male')">Afficher les hommes</button>
+    <button onclick="filterByGender('female')">Afficher les femmes</button>
+    <button onclick="sortByAmount('asc')">Montant ↑</button>
+    <button onclick="sortByAmount('desc')">Montant ↓</button>
+    <button onclick="sortByName()">Ordre alphabétique</button>
+    <button onclick="resetFilters()">Réinitialiser</button>
+  </aside>
+
+  <main>
+    <h1>Liste des Donateurs</h1>
+    <ul id="donor-list"></ul>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
