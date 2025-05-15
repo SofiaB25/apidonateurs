@@ -9,7 +9,8 @@ async function recupererDonateurs() {
       nom: `${majuscule(d.name.first)} ${majuscule(d.name.last)}`,
       genre: d.gender,
       telephone: d.phone,
-      adresse: `${d.location.street.number} ${d.location.street.name}, ${d.location.city}, ${d.location.country}`,
+      email : d.email,
+      adresse: `${d.location.city}, ${d.location.country}`,
       photo: d.picture.medium,
       montant: parseFloat((Math.random() * 500 + 10).toFixed(2))
     }));
@@ -31,9 +32,10 @@ function afficherDonateurs(liste) {
       <div class="donor-info">
         <strong>${d.nom}</strong><br>
         <span><strong>Genre :</strong> ${traduireGenre(d.genre)}</span><br>
-        <span><strong>Téléphone :</strong> ${d.telephone}</span><br>
-        <span><strong>Adresse :</strong> ${d.adresse}</span><br>
-        <span><strong>Don :</strong> ${d.montant} €</span>
+        <span><strong>📞 :</strong> ${d.telephone}</span><br>
+        <span><strong>📧 :</strong> ${d.email}</span><br>
+        <span><strong>🏠 :</strong> ${d.adresse}</span><br>
+        <span><strong>Don 💰 :</strong> ${d.montant} €</span>
       </div>
     `;
     conteneur.appendChild(li);
@@ -70,5 +72,4 @@ function resetFilters() {
 }
 
 recupererDonateurs();
-
 
